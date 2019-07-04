@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  aw-server:
+    build: .
+    container_name: activitywatch
+    image: aw-server
+    ports:
+      - "5600:5600/tcp"
+    restart: unless-stopped
+    volumes:
+      - ./.aw-server-data:/root/.local/share/activitywatch/aw-server/
